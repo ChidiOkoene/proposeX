@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ffd6e0">
+  <title>Be My Valentine? 💕</title>
+  <!-- Favicon: heart emoji as data URI -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💕</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Subtle floating hearts in background (decorative) -->
+  <div class="hearts-bg" aria-hidden="true">
+    <span class="heart heart-1">♥</span>
+    <span class="heart heart-2">♥</span>
+    <span class="heart heart-3">♥</span>
+    <span class="heart heart-4">♥</span>
+    <span class="heart heart-5">♥</span>
+    <span class="heart heart-6">♥</span>
+  </div>
+
+  <main class="proposal-screen" id="proposalScreen">
+    <h1 class="heading">
+      Will you be my Valentine, Ose mi<span id="nameSuffix"></span>?
+    </h1>
+    <p class="subheading">(Choose wisely...)</p>
+
+    <div class="buttons-wrap">
+      <button type="button" class="btn btn-yes" id="btnYes">
+        Yes! 💖
+      </button>
+      <button type="button" class="btn btn-no" id="btnNo">
+        No
+      </button>
+    </div>
+  </main>
+
+  <!-- Full-screen celebration when they say Yes -->
+  <div class="celebration-overlay hidden" id="celebrationOverlay">
+    <div class="celebration-content">
+      <p class="celebration-title">Yayyyy! I love you! 💖🎉</p>
+      <p class="celebration-subtitle">Best decision ever 😍</p>
+      <div class="confetti-container" id="confettiContainer"></div>
+      <div class="hearts-float" id="heartsFloat"></div>
+      <!-- Optional: love letter / photo placeholder -->
+      <div class="love-letter-placeholder">
+        <p>Here's to us 💕</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cat meme popup (shown on No clicks) -->
+  <div class="cat-modal hidden" id="catModal">
+    <div class="cat-modal-inner">
+      <button type="button" class="cat-modal-close" id="catModalClose" aria-label="Close">×</button>
+      <img src="" alt="Reaction" class="cat-image" id="catImage">
+      <p class="cat-caption" id="catCaption"></p>
+    </div>
+  </div>
+
+  <!-- "Okay fine" modal after too many No's -->
+  <div class="force-yes-modal hidden" id="forceYesModal">
+    <div class="force-yes-inner">
+      <p class="force-yes-text">Okay fine, but you're still my Valentine 😘</p>
+      <button type="button" class="btn btn-yes" id="forceYesBtn">Yes! 💖</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
